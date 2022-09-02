@@ -1,37 +1,39 @@
-'use strict'
+'use strict';
+
+let a = 1;
+let b = 2;
+let c = 1;
+let arr = [];
+let d;
+let d1;
+let d2;
 
 function solveEquation(a, b, c) {
-    let arr = [];
-    let a = 1;
-    let b = 2;
-    let c = 1;
-    let d;
-    let d1;
-    let d2;
-    
-    d = b ** 2 - 4 * a * c;
+    d = (b ** 2) - (4 * a * c);
     console.log('Дискриминант равен ', d);
     
     if (d < 0) {
-        arr = []
+        arr = [];
         console.log('Корней нет: ', arr);
     } else if (d === 0) {
         d = -b / (2 * a);
         arr.push(d);
         console.log('Корень уравнения: ', arr);
     } else {
-        d1 = (-b + Math.sqrt(d) )/(2*a);
+        d1 = (-b + Math.sqrt(d)) / (2*a);
         arr.push(d1);
-        d2 = (-b - Math.sqrt(d) )/(2*a);
+        d2 = (-b - Math.sqrt(d)) / (2*a);
         arr.push(d2);
         console.log('Корни уравнения: ', arr);
-    }
+    };
         
   // код для задачи №1 писать здесь
   return arr; // array
-}
 
-let credit = {
+};
+
+
+  let credit = {
   persent: '16',
   summBegin: 12,
   summCredit: 6000,
@@ -82,4 +84,3 @@ function allCredit(credit) {
 
 allCredit(credit);
 
-}
