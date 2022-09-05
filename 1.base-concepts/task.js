@@ -1,12 +1,12 @@
 'use strict';
 
 let a = 1;
-let b = 2;
-let c = 1;
-let arr = [];
+let b = 4;
+let c = 4;
 let d;
-let d1;
-let d2;
+let x1;
+let x2;
+let arr;
 
 function solveEquation(a, b, c) {
     d = (b ** 2) - (4 * a * c);
@@ -16,14 +16,16 @@ function solveEquation(a, b, c) {
         arr = [];
         console.log('Корней нет: ', arr);
     } else if (d === 0) {
-        d = -b / (2 * a);
-        arr.push(d);
+        arr = [];
+        x1 = -b / (2 * a);
+        arr.push(x1);
         console.log('Корень уравнения: ', arr);
-    } else {
-        d1 = (-b + Math.sqrt(d)) / (2*a);
-        arr.push(d1);
-        d2 = (-b - Math.sqrt(d)) / (2*a);
-        arr.push(d2);
+    } else if (d > 0) {
+        arr = [];
+        x1 = (-b + Math.sqrt(d)) / (2*a);
+        arr.push(x1);
+        x2 = (-b - Math.sqrt(d)) / (2*a);
+        arr.push(x2);
         console.log('Корни уравнения: ', arr);
     };
         
