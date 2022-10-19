@@ -1,10 +1,27 @@
 // Задание 1
+
+let arr = [14, 18, 92, 0, -6];
+
 function getArrayParams(arr) {
   let min, max, sum, avg;
-
+    sum = 0;
+    
+    for (i = 0; i < arr.length; i = i + 1) {
+        if (arr[i] > arr[i - 1]) {
+            max = arr[i];
+            sum = sum + max;
+        } else if (arr[i] < arr[i - 1]) {
+            min = arr[i];
+            sum = sum + min;
+        };
+        
+        avg = sum / arr.length;
+    }
   // Ваш код
 
   return { min: min, max: max, avg: avg };
+    
+    getArrayParams(arr);
 }
 
 // Задание 2
