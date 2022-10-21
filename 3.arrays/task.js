@@ -13,21 +13,13 @@ function compareArrays(arr1, arr2) {
 
 compareArrays(arr1, arr2);
 
-let arr = [10, 9, -6, 1];
+let massive = [10, 9, -6, 1];
 let plusEl;
 
-function advancedFilter(arr) {
-  let plus = arr.filter(function(n) {
-    plusEl = ((n > 0) && (n % 3 === 0));
-
-    return plusEl;
-  });
-};
-
-function advancedFilter2(plusEl) {
-  let multiplier = plusEl.map(function(l) {
-
-    return l * 10;
+function advancedFilter(massive) {
+  let plus = massive.filter(function(n) {
+    plusEl = ((n > 0) && (n % 3 === 0)).map(function(l) {
+    });
   });
 };
 
