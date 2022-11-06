@@ -13,19 +13,20 @@ function compareArrays(arr1, arr2) {
 
 compareArrays(arr1, arr2);
 
-let massive = [10, 9, -6, 1];
-let plusEl;
+let arr = [4, 8, 6, 9];
 
-function advancedFilter(massive) {
-  let plus = massive.filter(function(n) {
-    plusEl = ((n > 0) && (n % 3 === 0)).map(function(l) {
-    });
-  });
+let x3 = element => (element % 3) === 0;
+let plus = element => (element > 0) === true;
+let ten = element => element * 10;
+
+function advancedFilter(arr) {
+    let result;
+    result = arr.filter(x3).filter(plus).map(ten);
+    
+    return result;
 };
 
-let resultArr = plusEl;
-
-return resultArr; // array
+advancedFilter(arr);
 
 
 
