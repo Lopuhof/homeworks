@@ -5,7 +5,7 @@ function getArrayParams(arr) {
     max = arr[0];
     sum = 0;
     
-    for (i = 0; i < arr.length; i = i + 1) {
+    for (let i = 0; i < arr.length; i = i + 1) {
       if (arr[i] < min) {
           min = arr[i];
         } else if (arr[i] > max) {
@@ -26,59 +26,52 @@ getArrayParams([14, 18, 92, 0, -6]);
 
 
 // Задание 2
-  let arrOfArr = [[1, 2, 3], [4, 5, 6]];
-  let max = 0;
-  let item;
-  let small;
-  let big;
-  let dif;
-  
+let arrOfArr = [[0, 1, 2], [-1, -100]];
 
 function worker(arr) {
   let sum;
   sum = 0;
     
-  for (i = 0; i < arr.length; i = i + 1) {
+  for (let i = 0; i < arr.length; i = i + 1) {
     sum = sum + arr[i];
-    if (sum > max) {
-    max = sum;
-    };
   };
-    
-  console.log('Сумма элементов массива: ' + sum);
   return sum;
 };
 
 function makeWork(arrOfArr, func) {
+  let max;
+  max = func(arrOfArr[0]);
     
-  for (j = 0; j < arrOfArr.length; j = j + 1) {
-    item = arrOfArr[j];
-    func(item);
-  };
+    for (let i = 0; i < arrOfArr.length; i = i + 1) {
+      func(arrOfArr[i]);
+      if (max < func(arrOfArr[i])) {
+        max = func(arrOfArr[i]);
+     };        
+    };
     
-    if (func === worker) {
-      console.log('Наибольшая сумма среди массивов: ' + max);
-  };  
   return max;
 };
 
-makeWork(arrOfArr, worker);
+makeWork(arrOfArr, worker2);
 
 // Задание 3
   function worker2(arr) {
+    let small;
+    let big;
+    let dif;
+    small = arr[0];
+    big = arr[0];
+    
+    for (let i = 0; i < arr.length; i = i + 1) {
+      if (arr[i] < small) {
+        small = arr[i];
+      } else if (arr[i] > big) {
+        big = arr[i];
+      };
+    };
   
-    for (k = 0; k < arr.length; k = k + 1) {
-      small = arr[0];
-      big = arr[0];
-        
-      for(let l of arr) {
-        
-        if(small > l) small = l;
-        if(big < l) big = l;
-}
-  dif = Math.abs(big) - Math.abs(small);  
+    dif = Math.abs(big) - Math.abs(small);  
+    console.log('Минимальное значение внутри массива: ' + small, 'Максимальное значение внутри массива: ' + big, 'Модуль разности между максимумом и минимумом: ' + Math.abs(dif));
+    console.log('----------------------------------------------------');
+    return Math.abs(dif);
   };
-  
-  console.log('Минимальное значение внутри массива: ' + small, 'Максимальное значение внутри массива: ' + big, 'Модуль разности между максимумом и минимумом: ' + Math.abs(dif));
-  return dif;
-};
