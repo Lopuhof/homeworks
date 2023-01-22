@@ -2,7 +2,7 @@ function Student (name, gender, age) {
     this.name = name;
     this.gender = gender;
     this.age = age;
-}
+};
  
 let student1 = new Student("ivan", "male", 22);
 let student2 = new Student("irina", "female", 19);
@@ -10,7 +10,7 @@ let student3 = new Student("oleg", "male", 31);
  
 Student.prototype.setSubject = function (subjectName) {
     this.subject = subjectName;
-}
+};
  
 Student.prototype.addMark = function(mark) {
     if (this.marks === undefined) {
