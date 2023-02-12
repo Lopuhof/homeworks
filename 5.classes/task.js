@@ -9,8 +9,8 @@ class PrintEditionItem {
     this.type = null;
   }
     
-  fix(state) {
-    this.state = this.state * 1.5;
+  fix() {
+    this.state *= 1.5;
   }
     
   set state(number) {
@@ -38,14 +38,14 @@ console.log(warAndPeace.state);
 
 class Magazine extends PrintEditionItem {
     constructor(name, releaseDate, pagesCount) {
-        super();
+        super(name, releaseDate, pagesCount);
         this.type = 'magazine';
     }
 }
 
 class Book extends PrintEditionItem {
     constructor(author, name, releaseDate, pagesCount) {
-        super(author, name, releaseDate, pagesCount);
+        super(name, releaseDate, pagesCount);
         this.type = 'book';
         this.author = author;
     }
